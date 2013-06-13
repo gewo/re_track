@@ -1,5 +1,7 @@
 # ReTrack
 
+[![Build Status](https://travis-ci.org/gewo/re_track.png)](https://travis-ci.org/gewo/re_track/)
+
 Track HTTP-Referrers in Rails using Mongoid.
 
 ## Installation
