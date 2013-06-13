@@ -15,17 +15,17 @@ module ReTrack
     # Extract query parameters from referer_url and first_url.
     #
     # @example
-    #   r = ReTrack::RefererTracking.new referer_url: 'http://google.de/?q=a'
-    #   r.query('q')               # => 'a'
-    #   r.query('a')               # => nil
-    #   r.query('q', 'first_url')  # => nil
+    #   r = ReTrack::RefererTracking.new first_url: 'http://google.de/?q=a'
+    #   r.query('q')                 # => 'a'
+    #   r.query('a')                 # => nil
+    #   r.query('q', 'referer_url')  # => nil
     #
     # @param parameter [String] The Query String Parameter to look up.
     # @param url_field_name [String] The URL field to query. Either
     #   'referer_url' or 'first_url'.
     #
     # @return [String] The value for the given query parameter or nil.
-    def query(parameter, url_field_name = 'referer_url')
+    def query(parameter, url_field_name = 'first_url')
       return nil unless url = value_for(url_field_name)
       query_hash(url)[parameter.to_s]
     end
