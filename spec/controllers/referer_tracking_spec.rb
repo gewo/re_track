@@ -4,6 +4,7 @@ describe UsersController, "RefererTracking" do
   before :each do
     @request.env['HTTP_REFERER'] = (@referer = "awesome.pa.ge/believe/me")
     @request.env['HTTP_USER_AGENT'] = @ua = "Fancy new UA"
+    @request.env['REMOTE_ADDR'] = @ip = '102.97.107.101'
     get :new
   end
 
@@ -74,6 +75,9 @@ describe UsersController, "RefererTracking" do
         @rt.trackable.should == user
       end
 
+      it 'saves the ip in RefererTracking' do
+        @rt.ip.should == @ip
+      end
     end
 
     it "completes the response when there are errors in the sweeper" do

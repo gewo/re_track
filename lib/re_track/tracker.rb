@@ -13,6 +13,7 @@ module ReTrack
         hash[:first_url] = request.url
         hash[:user_agent] = request.env['HTTP_USER_AGENT']
         hash[:first_visited_at] = Time.now
+        hash[:ip] = request.remote_ip
       end
     end
 

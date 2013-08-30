@@ -11,6 +11,7 @@ module ReTrack
     field :first_url,        type: String
     field :user_agent,       type: String
     field :first_visited_at, type: DateTime
+    field :ip, type: String
 
     # Extract query parameters from referer_url and first_url.
     #
