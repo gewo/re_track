@@ -5,7 +5,7 @@ module ReTrack
 
     store_in collection: 'retrack_referer_trackings'
 
-    belongs_to :trackable, polymorphic: true
+    belongs_to :trackable, polymorphic: true, index: true
 
     field :referer_url,      type: String
     field :first_url,        type: String
