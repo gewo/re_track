@@ -1,6 +1,6 @@
 class ReTrack::Sweeper < ActionController::Caching::Sweeper
   def after_create(record)
-    if session && session['retrack']
+    if session && session[:retrack]
       rt = ReTrack::RefererTracking.new
       rt.trackable = record
 
