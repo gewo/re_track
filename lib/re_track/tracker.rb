@@ -14,7 +14,9 @@ module ReTrack
         hash[:user_agent] = request.env['HTTP_USER_AGENT']
         hash[:first_visited_at] = Time.now
         hash[:ip] = request.remote_ip
-        hash[:x_forwarded_ip] = request.env['X_FORWARDED_FOR']
+        hash[:forwarded_ip] = request.env['HTTP_X_FORWARDED_FOR'] ||
+          request.env['HTTP_CLIENT_IP']
+        hash[:accept_language] = request.env['HTTP_ACCEPT_LANGUAGE']
       end
     end
 
