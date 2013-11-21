@@ -1,5 +1,5 @@
 PATH
-  remote: .
+  remote: /home/gewo/dev/re_track
   specs:
     re_track (0.4.0)
       activesupport
@@ -132,7 +132,9 @@ DEPENDENCIES
   appraisal
   database_cleaner
   jquery-rails
+  mongoid (~> 3.0)
   pry
+  rails (~> 3.0)
   re_track!
   rspec-rails
   simplecov

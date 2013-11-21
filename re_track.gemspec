@@ -16,12 +16,12 @@ Gem::Specification.new do |s|
                   ['MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails'
-  s.add_dependency 'mongoid'
+  s.add_dependency 'mongoid', '>= 3'
   s.add_dependency 'activesupport'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'database_cleaner'
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'appraisal'
 end

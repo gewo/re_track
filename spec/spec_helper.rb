@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'bundler/setup'
 require 'pry'
 
 if RUBY_VERSION =~ /1\.9/ && RUBY_ENGINE == 'ruby'
