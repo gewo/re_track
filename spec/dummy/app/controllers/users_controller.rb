@@ -18,9 +18,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-  end
-
   def create
     @user = User.new(params[:user])
     flash[:notice] = 'User was successfully created.' if @user.save
