@@ -2,8 +2,9 @@ PATH
   remote: .
   specs:
     re_track (0.4.0)
+      activesupport
       mongoid
-      rails (~> 3.1)
+      rails
 
 GEM
   remote: https://rubygems.org/
@@ -37,6 +38,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.4)
+    coderay (1.1.0)
     database_cleaner (1.0.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
@@ -50,6 +52,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.23)
     mongoid (3.1.4)
       activemodel (~> 3.2)
@@ -60,6 +63,10 @@ GEM
     multi_json (1.7.6)
     origin (1.1.0)
     polyglot (0.3.3)
+    pry (0.9.12.3)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -100,6 +107,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    slop (3.4.7)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -119,6 +127,7 @@ PLATFORMS
 DEPENDENCIES
   database_cleaner
   jquery-rails
+  pry
   re_track!
   rspec-rails
   simplecov

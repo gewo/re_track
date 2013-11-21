@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  cache_sweeper ReTrack::Sweeper
+  include ReTrack::Sweeper
+  re_track :user
+
   respond_to :html
   before_filter :get_user, only: [:show, :edit, :update, :destroy]
 
