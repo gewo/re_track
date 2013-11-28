@@ -1,6 +1,9 @@
 # ReTrack
 
 [![Build Status](https://travis-ci.org/gewo/re_track.png)](https://travis-ci.org/gewo/re_track/)
+[![Coverage Status](https://coveralls.io/repos/gewo/re_track/badge.png)](https://coveralls.io/r/gewo/re_track)
+[![Code Climate](https://codeclimate.com/github/gewo/re_track.png)](https://codeclimate.com/github/gewo/re_track)
+[![Dependency Status](https://gemnasium.com/gewo/re_track.png)](https://gemnasium.com/gewo/re_track)
 
 Track HTTP-Referrers in Rails using Mongoid.
 
