@@ -8,15 +8,15 @@ module ReTrack
 
     def rt_track_referer
       if session[:retrack].nil? && !request_from_a_known_bot?
-        session[:retrack] = hash = {}
-        hash[:referer_url] = request.headers['HTTP_REFERER'].presence || 'none'
-        hash[:first_url] = request.url
-        hash[:user_agent] = request.env['HTTP_USER_AGENT']
-        hash[:first_visited_at] = Time.now
-        hash[:ip] = request.remote_ip
-        hash[:forwarded_ip] = request.env['HTTP_X_FORWARDED_FOR'] ||
-          request.env['HTTP_CLIENT_IP']
-        hash[:accept_language] = request.env['HTTP_ACCEPT_LANGUAGE']
+        session[:retrack] = Hash[
+          :referer_url,      request.headers['HTTP_REFERER'].presence || 'none',
+          :first_url,        request.url,
+          :user_agent,       request.env['HTTP_USER_AGENT'],
+          :first_visited_at, Time.now,
+          :ip,               request.remote_ip,
+          :accept_language,  request.env['HTTP_ACCEPT_LANGUAGE'],
+          :forwarded_ip,     request.env['HTTP_X_FORWARDED_FOR'] || request.env['HTTP_CLIENT_IP']
+        ]
       end
     end
 
