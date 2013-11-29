@@ -7,7 +7,8 @@ module ReTrack
     included do
       has_one :referer_tracking,
         class_name: 'ReTrack::RefererTracking',
-        as: :trackable
+        as: :trackable,
+        validate: false
     end
   end
 end
