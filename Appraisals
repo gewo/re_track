@@ -5,5 +5,5 @@ end
 
 appraise 'rails-4' do
   gem 'rails', '~> 4.0.0'
-  gem 'mongoid', '~> 4.0.0', github: 'mongoid/mongoid'
+  gem 'mongoid', '~> 4.0.0.alpha1', github: 'mongoid/mongoid'
 end
