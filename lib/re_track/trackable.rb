@@ -7,12 +7,8 @@ module ReTrack
     included do
       has_one :referer_tracking,
         class_name: 'ReTrack::RefererTracking',
-        as: :trackable
-
-      klass = self
-      ReTrack::Sweeper.class_eval do
-        observe klass
-      end
+        as: :trackable,
+        validate: false
     end
   end
 end

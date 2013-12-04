@@ -9,3 +9,4 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 .yardoc/
 ctags
+gemfiles/*.lock
