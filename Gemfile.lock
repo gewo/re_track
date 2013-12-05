@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    re_track (0.5.1)
+    re_track (0.5.2)
       activesupport
       mongoid (>= 3)
       rails
