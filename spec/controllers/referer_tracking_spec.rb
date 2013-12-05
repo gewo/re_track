@@ -5,6 +5,8 @@ describe UsersController, "RefererTracking" do
     @request.env['HTTP_REFERER'] = (@referer = "awesome.pa.ge/believe/me")
     @request.env['HTTP_USER_AGENT'] = @ua = "Fancy new UA"
     @request.env['REMOTE_ADDR'] = @ip = '102.97.107.101'
+    @request.env['HTTP_ACCEPT_LANGUAGE'] = @accept_language = 'eo'
+    @request.env['HTTP_X_FORWARDED_FOR'] = @forwarded_ip = '10.0.23.42'
     get :new
   end
 
@@ -77,6 +79,14 @@ describe UsersController, "RefererTracking" do
 
       it 'saves the ip in RefererTracking' do
         @rt.ip.should == @ip
+      end
+
+      it 'saves the accept_language in RefererTracking' do
+        expect(@rt.accept_language).to eq @accept_language
+      end
+
+      it 'saves forwarded_ip in RefererTracking' do
+        expect(@rt.forwarded_ip).to eq @forwarded_ip
       end
     end
 
