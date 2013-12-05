@@ -44,9 +44,7 @@ module ReTrack
 
       def rt_after_create(record)
         return unless record.persisted?
-        if session && session[:retrack]
-          rt_create_referer_tracking! record
-        end
+        rt_create_referer_tracking!(record) if session && session[:retrack]
       rescue => e
         Rails.logger.info(
           "ReTrack::Sweeper.after_create error saving record: #{e}")

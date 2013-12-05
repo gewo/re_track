@@ -1,0 +1,14 @@
+Documentation:
+  Enabled: false
+AlignArray:
+  Enabled: false
+AlignHash:
+  Enabled: false
+AlignParameters:
+  Enabled: false
+ModuleFunction:
+  Enabled: false
+AllCops:
+  Excludes:
+    - spec/dummy/**
+    - script/**
