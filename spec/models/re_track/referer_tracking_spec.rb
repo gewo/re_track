@@ -27,7 +27,7 @@ module ReTrack
 
       context 'when first_url is url_encoded' do
         before do
-          referer_tracking.first_url = CGI::escape 'http://google.de/?q=query'
+          referer_tracking.first_url = CGI.escape 'http://google.de/?q=query'
         end
         it { should == 'query' }
       end

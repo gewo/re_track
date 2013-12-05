@@ -16,7 +16,7 @@ module ReTrack
     field :accept_language,  type: String
 
     [:referer_url, :first_url, :user_agent, :first_visited_at, :ip,
-     :forwarded_ip, :accept_language].each { |field| index({ field => 1 }) }
+     :forwarded_ip, :accept_language].each { |field| index(field => 1) }
 
     # Extract query parameters from referer_url and first_url.
     #
@@ -32,18 +32,19 @@ module ReTrack
     #
     # @return [String] The value for the given query parameter or nil.
     def query(parameter, url_field_name = 'first_url')
-      return nil unless url = value_for(url_field_name)
+      url = value_for(url_field_name)
+      return unless url
       query_hash(url)[parameter.to_s]
     end
 
     private
 
       def query_hash(url)
-        Rack::Utils.parse_query URI.parse(CGI::unescape(url)).query rescue {}
+        Rack::Utils.parse_query URI.parse(CGI.unescape(url)).query rescue {}
       end
 
       def value_for(field)
-        return nil unless ['referer_url', 'first_url'].include? field.to_s
+        return unless %w(referer_url first_url).include? field.to_s
         public_send("#{field}")
       end
   end
