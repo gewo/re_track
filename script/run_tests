@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+[ -n "$DEBUG" ] && set -x
+
+bundler_cache=${BUNDLER_CACHE:-vendor/bundle}
+bundle check --path=$bundler_cache || bundle install --path=$bundler_cache
+
+# Appraisal does not like vendored gem installations...
+GEM_HOME=$bundler_cache/ruby/2.0.0 gem install bundler
+
+bundle exec rake appraisal:install
+bundle exec rake appraisal

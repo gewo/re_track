@@ -1,0 +1,11 @@
+image: ruby2.0.0
+env:
+  - DEBUG=1
+  - BUNDLER_CACHE=/tmp/bundler
+script:
+  - sudo chown ubuntu:ubuntu /tmp/bundler
+  - script/run_tests
+services:
+  - mongodb
+cache:
+  - /tmp/bundler
