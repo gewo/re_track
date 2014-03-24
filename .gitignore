@@ -10,3 +10,4 @@ spec/dummy/.sass-cache
 .yardoc/
 ctags
 gemfiles/*.lock
+vendor/bundle/
