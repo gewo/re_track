@@ -15,8 +15,9 @@ module ReTrack
     field :forwarded_ip,     type: String
     field :accept_language,  type: String
 
-    [:referer_url, :first_url, :user_agent, :first_visited_at, :ip,
-     :forwarded_ip, :accept_language].each { |field| index(field => 1) }
+    [
+      :user_agent, :first_visited_at, :ip, :forwarded_ip
+    ].each { |field| index(field => 1) }
 
     # Extract query parameters from referer_url and first_url.
     #

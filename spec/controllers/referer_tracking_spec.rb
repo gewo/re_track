@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController, 'RefererTracking' do
+describe UsersController, 'RefererTracking', type: :controller do
   before :each do
     @request.env['HTTP_REFERER'] = @referer = 'awesome.pa.ge/believe/me'
     @request.env['HTTP_USER_AGENT'] = @ua = 'Fancy new UA'
