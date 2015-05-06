@@ -11,3 +11,5 @@ spec/dummy/.sass-cache
 ctags
 gemfiles/*.lock
 vendor/bundle/
+Gemfile.lock
+tags
