@@ -75,7 +75,8 @@ describe UsersController, 'RefererTracking', type: :controller do
       end
 
       it 'saves the ip in RefererTracking' do
-        @rt.ip.should == @ip
+        encrypted_ip = Digest::SHA256.hexdigest(@ip)
+        @rt.ip.should == encrypted_ip
       end
 
       it 'saves the accept_language in RefererTracking' do
@@ -83,7 +84,7 @@ describe UsersController, 'RefererTracking', type: :controller do
       end
 
       it 'saves forwarded_ip in RefererTracking' do
-        expect(@rt.forwarded_ip).to eq @forwarded_ip
+        expect(@rt.forwarded_ip).to eq nil
       end
     end
 

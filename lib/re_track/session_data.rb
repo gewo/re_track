@@ -29,7 +29,7 @@ module ReTrack
       end
 
       def ip
-        @request.remote_ip
+        Digest::SHA256.hexdigest(@request.remote_ip + ip_secret)
       end
 
       def accept_language
@@ -37,7 +37,12 @@ module ReTrack
       end
 
       def forwarded_ip
-        @request.env['HTTP_X_FORWARDED_FOR'] || @request.env['HTTP_CLIENT_IP']
+        # we don't need this information anymore
+        nil
+      end
+
+      def ip_secret
+        ENV['ENCRYPT_IP_SECRET'] || ''
       end
 
     extend self

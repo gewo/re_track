@@ -5,3 +5,5 @@ gemspec
 gem "jquery-rails"
 
 gem "responders"
+
+gem 'test-unit', '~> 3.0'
