@@ -5,7 +5,7 @@ module ReTrack
     mattr_accessor :rt_model_instance_names
 
     included do
-      after_filter :rt_after_filter, only: :create
+      after_action :rt_after_action, only: :create
     end
 
     module ClassMethods
@@ -20,7 +20,7 @@ module ReTrack
 
     private
 
-      def rt_after_filter
+      def rt_after_action
         rt_records.each { |record| rt_after_create record }
         true
       end
