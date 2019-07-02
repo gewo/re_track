@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_runtime_dependency 'rails'
-  s.add_runtime_dependency 'mongoid', '>= 6'
+  s.add_runtime_dependency 'mongoid', '>= 4'
   s.add_runtime_dependency 'activesupport'
 
   s.add_development_dependency 'rspec-rails'
