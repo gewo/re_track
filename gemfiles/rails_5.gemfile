@@ -6,6 +6,6 @@ gem "jquery-rails"
 gem "responders"
 gem "test-unit", "~> 3.0"
 gem "rails", "~> 5.0"
-gem "mongoid", "~> 5"
+gem "mongoid", "~> 6"
 
 gemspec path: "../"
