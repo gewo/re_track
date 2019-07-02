@@ -1,5 +1,6 @@
 default_session: &default_session
-  hosts: localhost:27017
+  hosts:
+    - localhost:27017
   database: retrack_dummy_development
   options:
 
