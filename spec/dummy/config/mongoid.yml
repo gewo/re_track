@@ -1,16 +1,22 @@
-development:
-  sessions:
-    default:
-      database: retrack_dummy_development
-      hosts:
-        - localhost:27017
+default_session: &default_session
+  hosts:
+    - localhost:27017
+  database: retrack_dummy_development
   options:
-test:
-  sessions:
+
+defaults: &defaults
+  clients:
     default:
+      <<: *default_session
+
+development:
+  <<: *defaults
+
+test:
+  clients:
+    default:
+      <<: *default_session
       database: retrack_dummy_test
-      hosts:
-        - localhost:27017
       options:
         # consistency: :strong
         # In the test environment we lower the retries and retry interval to

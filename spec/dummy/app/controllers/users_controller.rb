@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   re_track :user
 
   respond_to :html
-  before_filter :get_user, only: [:show, :edit, :update, :destroy]
+  before_action :get_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all

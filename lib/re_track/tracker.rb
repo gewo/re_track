@@ -3,7 +3,7 @@ module ReTrack
     extend ActiveSupport::Concern
 
     included do
-      before_filter :rt_track_referer
+      before_action :rt_track_referer
     end
 
     private
